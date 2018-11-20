@@ -1,7 +1,7 @@
 CPP=g++
 LDFLAGS= -I. -lGL -lGLEW -lglfw
 # DEPS= Mesh.hpp Shader.hpp
-OBJ=Mesh.o firstTrigProjections.o Shader.o Window.o Camera.o Texture.o
+OBJ=Mesh.o main.o Shader.o Window.o Camera.o Texture.o Light.o
 
 #%.o: %.cpp $(DEPS)
 #	$(CPP) -c -o $@ $
