@@ -1,5 +1,8 @@
-## Using a 3D model from: 
+## 3D Models + Difuse Light + Enviroment Light
+
+**Using a 3D model from:**
 [**Free3d**](https://free3d.com/)
+
 **TOOLS used:**
 
 * GLM
