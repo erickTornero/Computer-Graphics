@@ -174,10 +174,12 @@ int main(){
     dirtTexture.LoadTextureA();
 
     helicopter = Model();
-    std::string modelPath = "models/heli/uh60.obj";
+    //std::string modelPath = "models/heli/uh60.obj";
+    std::string modelPath = "models/bird/12214_Bird_v1max_l3.obj";
+    //std::string modelPath = "models/coelophysi/Coelophysis.obj";
     helicopter.LoadModel(modelPath);
 
-    mainLight = Light(0.8f, 0.8f, 0.8f, 0.9f, 2.0f, -1.0f, -2.0f, 1.0f);
+    mainLight = Light(0.4f, 0.4f, 0.4f, 0.5f, 2.0f, -1.0f, -2.0f, 2.0f);
     GLint uniformAmbientIntensity = 0, uniformAmbientColour = 0;
     GLint uniformDirection, uniformIntensityDiff;
     
@@ -218,7 +220,7 @@ int main(){
             dirSZ = !dirSZ;
         // Clear window
         // as arguments RGB, and alpha which is the transparent
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
         // Clearing the color buffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -257,8 +259,8 @@ int main(){
         objects[1]->RenderMesh();
         
         model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(triOffset, 0.0f, -1.5f));
-        model = glm::rotate(model, currAngle*toRandians, glm::vec3(0.0f, -0.8f, 0.0f));
+        model = glm::translate(model, glm::vec3(triOffset, 2.0f, -1.5f));
+        model = glm::rotate(model, -90*toRandians, glm::vec3(1.0f, 0.0f, 0.0f));
         //model = glm::translate(model, glm::vec3(triOffset, triOffset, 0.0f));
         //Scalling:
         model = glm::scale(model, glm::vec3(0.04f, 0.04f, 0.04f));

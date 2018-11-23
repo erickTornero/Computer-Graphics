@@ -61,7 +61,7 @@ void Model::LoadMaterials(const aiScene * scene){
             if(material->GetTexture(aiTextureType_DIFFUSE, 0, &path) == AI_SUCCESS){
                 int idx = std::string(path.data).rfind("\\");
                 std::string filename = std::string(path.data).substr(idx + 1);
-
+                printf(filename.c_str());
                 std::string textPath = std::string("textures/") + filename;
 
                 textureList[i] = new Texture((const char *)textPath.c_str());
@@ -74,9 +74,14 @@ void Model::LoadMaterials(const aiScene * scene){
             }
         }
         if(!textureList[i]){
+            printf("not texture\n");
             textureList[i] = new Texture("textures/plain.png");
         }
     }
+    //textureList[1] = new Texture("textures/Coelophysis_D.tga");
+    //textureList[1]->LoadTextureA();
+    //textureList[0] = new Texture("textures/Coelophysis_N.tga");
+    //textureList[0]->LoadTextureA();
 }
 
 void Model::RenderModel(){
