@@ -177,6 +177,8 @@ int main(){
     //std::string modelPath = "models/heli/uh60.obj";
     std::string modelPath = "models/bird/12214_Bird_v1max_l3.obj";
     //std::string modelPath = "models/coelophysi/Coelophysis.obj";
+    //std::string modelPath = "models/Audi_R8_2017.obj";
+    //std::string modelPath = "models/Wolf_obj.obj";
     helicopter.LoadModel(modelPath);
 
     mainLight = Light(0.4f, 0.4f, 0.4f, 0.5f, 2.0f, -1.0f, -2.0f, 2.0f);
@@ -259,11 +261,11 @@ int main(){
         objects[1]->RenderMesh();
         
         model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(triOffset, 2.0f, -1.5f));
-        model = glm::rotate(model, -90*toRandians, glm::vec3(1.0f, 0.0f, 0.0f));
+        //model = glm::translate(model, glm::vec3(triOffset, 2.0f, -1.5f));
+        //model = glm::rotate(model, -90*toRandians, glm::vec3(1.0f, 0.0f, 0.0f));
         //model = glm::translate(model, glm::vec3(triOffset, triOffset, 0.0f));
         //Scalling:
-        model = glm::scale(model, glm::vec3(0.04f, 0.04f, 0.04f));
+        model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
         glUniformMatrix4fv(shader->GetModelLocation(), 1, GL_FALSE, glm::value_ptr(model));
         helicopter.RenderModel();
 
